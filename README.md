@@ -38,4 +38,4 @@ Aqui estão alguns dos projetos que estou trabalhando para aprimorar minhas habi
 - LinkedIn: [Osvaldo Cruz](https://www.linkedin.com/in/osvaldocruzteste)
 - GitHub: [github.com/osvaldocruzteste](https://github.com/osvaldocruzteste)
 
-## [Estou sempre aberto a novas oportunidades de aprendizado e colaboração. Vamos conectar e criar algo incrível juntos!](pplx://action/followup)
+## [Estou sempre aberto a novas oportunidades de aprendizado e colaboração. Vamos conectar e criar algo incrível juntos!]
