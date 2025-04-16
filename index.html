@@ -1,13 +1,250 @@
-# Seja bem vindo a minha página
-
-## Meus Dados
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id sem aliquet enim cursus commodo ac at quam. Curabitur nec ipsum augue. Cras mattis nisi eu purus pharetra pellentesque. Suspendisse ac dictum erat. Fusce viverra lobortis ex, nec hendrerit lectus. Donec eu eleifend ligula. Donec vel odio sed nunc ultricies pharetra sit amet eu lectus. Proin feugiat at velit non vestibulum. Pellentesque gravida auctor erat sed congue. Sed dapibus congue mauris, sit amet faucibus turpis volutpat ut. Fusce facilisis eros at porta posuere. Cras ac sagittis velit. Maecenas pharetra fermentum dui, congue semper nibh tincidunt nec.
-
-## Quem sou eu
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id sem aliquet enim cursus commodo ac at quam. Curabitur nec ipsum augue. Cras mattis nisi eu purus pharetra pellentesque. Suspendisse ac dictum erat. Fusce viverra lobortis ex, nec hendrerit lectus. Donec eu eleifend ligula. Donec vel odio sed nunc ultricies pharetra sit amet eu lectus. Proin feugiat at velit non vestibulum. Pellentesque gravida auctor erat sed congue. Sed dapibus congue mauris, sit amet faucibus turpis volutpat ut. Fusce facilisis eros at porta posuere. Cras ac sagittis velit. Maecenas pharetra fermentum dui, congue semper nibh tincidunt nec.
-
-## Minha experiência
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id sem aliquet enim cursus commodo ac at quam. Curabitur nec ipsum augue. Cras mattis nisi eu purus pharetra pellentesque. Suspendisse ac dictum erat. Fusce viverra lobortis ex, nec hendrerit lectus. Donec eu eleifend ligula. Donec vel odio sed nunc ultricies pharetra sit amet eu lectus. Proin feugiat at velit non vestibulum. Pellentesque gravida auctor erat sed congue. Sed dapibus congue mauris, sit amet faucibus turpis volutpat ut. Fusce facilisis eros at porta posuere. Cras ac sagittis velit. Maecenas pharetra fermentum dui, congue semper nibh tincidunt nec.
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Currículo - Enderson Menezes Cândido</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        :root {
+            --primary: #2d3e50;
+            --accent: #4fc3f7;
+            --bg: #f7f9fa;
+            --text: #222;
+            --menu-bg: #fff;
+            --menu-hover: #e3f2fd;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: var(--primary);
+            color: #fff;
+            padding: 2rem 0 1rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+        header p {
+            margin: 0.5rem 0 0 0;
+            font-size: 1.1rem;
+            color: #cfd8dc;
+        }
+        nav {
+            background: var(--menu-bg);
+            box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .menu li {
+            margin: 0;
+        }
+        .menu li a {
+            display: block;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s;
+        }
+        .menu li a:hover, .menu li a.active {
+            background: var(--menu-hover);
+            color: var(--accent);
+        }
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(44,62,80,0.06);
+            padding: 2rem 2.5rem;
+        }
+        section {
+            margin-bottom: 2.5rem;
+        }
+        section h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.3rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        ul, .exp-list, .cert-list, .skills-list, .projects-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .exp-list li, .cert-list li, .skills-list li, .projects-list li {
+            margin-bottom: 1rem;
+        }
+        .exp-company {
+            font-weight: bold;
+            color: var(--accent);
+        }
+        .exp-role {
+            font-weight: 500;
+        }
+        .exp-date {
+            font-size: 0.97em;
+            color: #789;
+        }
+        .divider {
+            border-top: 1px solid #e0e0e0;
+            margin: 2rem 0;
+        }
+        @media (max-width: 700px) {
+            main {
+                padding: 1rem 0.5rem;
+            }
+            .menu li a {
+                padding: 1rem 1rem;
+            }
+        }
+    </style>
+    <script>
+        // Scroll to section on menu click
+        window.onload = function() {
+            document.querySelectorAll('.menu a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        document.querySelectorAll('.menu a').forEach(a => a.classList.remove('active'));
+                        this.classList.add('active');
+                        document.querySelector(href).scrollIntoView({behavior: 'smooth'});
+                    }
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Enderson Menezes Cândido</h1>
+        <p>DevOps | SRE | Engenharia de Software</p>
+        <p>Santiago, Chile | Maringá, Brasil &nbsp; | &nbsp; <a href="mailto:endersonster@gmail.com" style="color:#4fc3f7;">endersonster@gmail.com</a></p>
+    </header>
+    <nav>
+        <ul class="menu">
+            <li><a href="#objetivo" class="active">Objetivo</a></li>
+            <li><a href="#perfil">Perfil</a></li>
+            <li><a href="#experiencia">Experiência</a></li>
+            <li><a href="#educacao">Educação</a></li>
+            <li><a href="#certificacoes">Certificações</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="objetivo">
+            <h2>Objetivo</h2>
+            <p>Atuar em posições de liderança formal como Engineering Manager ou Tech Lead, após dois anos liderando equipes SRE e tomando decisões críticas de arquitetura em ambientes complexos.</p>
+        </section>
+        <section id="perfil">
+            <h2>Perfil Profissional</h2>
+            <p>Profissional de tecnologia com ampla experiência em DevOps, Site Reliability Engineering (SRE) e automação. Especialista em soluções escaláveis, seguras e eficientes, com histórico de liderança em projetos de infraestrutura e melhoria da experiência do desenvolvedor. Entusiasta de inovação e boas práticas em desenvolvimento e operações.</p>
+        </section>
+        <section id="experiencia">
+            <h2>Experiência Profissional</h2>
+            <ul class="exp-list">
+                <li>
+                    <span class="exp-company">Stone Payments SA</span> – <span class="exp-role">Senior SRE</span> <span class="exp-date">(Jan 2024 – Presente)</span><br>
+                    <ul>
+                        <li>Liderança na reformulação do ambiente GitHub (10.000+ repositórios).</li>
+                        <li>Gestão de pipelines CI/CD com mais de 3 milhões de minutos anuais.</li>
+                        <li>Desenvolvimento de ferramentas internas para segurança e automação.</li>
+                        <li>Implementação de soluções escaláveis para otimização de processos.</li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="exp-company">Toku</span> – <span class="exp-role">Mid Level Platform Engineer</span> <span class="exp-date">(Mar 2023 – Dez 2023)</span><br>
+                    <ul>
+                        <li>Implementação e otimização de monitoramento (Datadog).</li>
+                        <li>Desenvolvimento de gateways de API e automações em Kubernetes.</li>
+                        <li>Criação de scripts internos em Bash e Python.</li>
+                        <li>Estruturação de ambientes multi-cloud com Terraform.</li>
+                        <li>Colaboração em auditorias PCI e análise de riscos.</li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="exp-company">Stone Payments SA</span> – <span class="exp-role">Senior System Engineer</span> <span class="exp-date">(Jun 2021 – Mar 2023)</span><br>
+                    <ul>
+                        <li>Automação de sistemas Firewall e BGP.</li>
+                        <li>Criação de providers Terraform em Go para sistemas legados.</li>
+                        <li>Desenvolvimento de bots autônomos para suporte interno (Slack).</li>
+                        <li>Implementação de soluções proprietárias de segurança.</li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="exp-company">Outras experiências:</span>
+                    <ul>
+                        <li>Cortex Intelligence (2020-2021): Mid Level Data Engineer</li>
+                        <li>Unicesumar (2020-2021): GRC TI Leader</li>
+                        <li>Orbital Aceleradora / Gk2 Cloud (2018-2019): PHP Developer</li>
+                        <li>Brasil Celular (2017): Marketing Lead</li>
+                        <li>YMDA (2014-2016): Server Admin / Instrutor</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section id="educacao">
+            <h2>Educação</h2>
+            <ul>
+                <li>
+                    <b>Pós-graduação:</b> DevOps & Continuous Software Engineering<br>
+                    PUC Minas (Dez 2024 – Presente)
+                </li>
+                <li>
+                    <b>Bacharelado:</b> Engenharia de Software<br>
+                    UniCesumar (Jan 2019 – Jul 2022)
+                </li>
+                <li>
+                    <b>Bacharelado (Incompleto):</b> Física<br>
+                    Universidade Estadual de Maringá (Jan 2014 – Dez 2017)
+                </li>
+            </ul>
+        </section>
+        <section id="certificacoes">
+            <h2>Certificações</h2>
+            <ul class="cert-list">
+                <li>GitHub Actions, Administrator, Foundation (GitHub)</li>
+                <li>LFD103: Beginner's Guide to Linux Kernel Development (Linux Foundation)</li>
+                <li>LFC110: Fundamentals of Professional Open Source Management (Linux Foundation)</li>
+                <li>GitLab Certified Git Associate (GitLab)</li>
+                <li>Modernize Infrastructure and Applications with Google Cloud (Google)</li>
+                <li>The GRC Approach to Managing Cybersecurity (Kennesaw State University)</li>
+                <li>Outras certificações disponíveis no LinkedIn e GitHub</li>
+            </ul>
+        </section>
+        <section id="skills">
+            <h2>Skills & Competências</h2>
+            <ul class="skills-list">
+                <li><b>Linguagens:</b> Python, Bash, Go, Terraform, Ansible</li>
+                <li><b>Ferramentas:</b> Kubernetes, Datadog, CI/CD, AWS, GCP, GitHub, GitLab</li>
+                <li><b>Metodologias:</b> DevOps, SRE, Segurança da Informação, Governança de TI</li>
+                <li><b>Idiomas:</b> Português (nativo), Espanhol (intermediário), Inglês (básico)</li>
+            </ul>
+        </section>
+        <section id="projetos">
+            <h2>Projetos & Conquistas</h2>
+            <ul class="projects-list">
+                <li>DevParaná & Codaqui: Membro ativo e organizador de eventos profissionais na área de tecnologia.</li>
+                <li>NASA Space Apps (2017 & 2018): Reconhecimento em ranking global de inovação.</li>
+                <li>Microsoft Innovative Educator (2016-2019): Destaque como educador inovador.</li>
+                <li>Sicoob Hackathon (2018): Vencedor em reformulação de processos internos.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
